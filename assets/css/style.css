@@ -1,0 +1,983 @@
+:root{
+    --header-text-color:#303134;
+    --white-color1: #FFFFFF;
+    --white-color2: #FEFEFF;
+    --white-color3: #F4F4F4;
+    --black-color: #1A1A1B;
+    --grey-color: #8D8D8D;
+    --blue-color: #4B54FA;
+    --yellow-color: #FED701;
+    --light-blue: #08AEEA;
+    --footer-black: #141418;
+    --footer-text-color:#DCDBDB;
+    --footer-input-color:#353030;
+
+}
+
+body{
+    max-width: 1360px;
+    margin: 0 auto;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    height: 70px;
+    
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 46px;
+    margin-right: 91px;
+  }
+  
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 650px;
+    position: relative;
+  }
+  
+  .carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+  }
+  
+  .slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+  }
+  
+  .carousel-button:hover,
+  .carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  .carousel-button:focus {
+    outline: 1px solid black;
+  }
+  
+  .carousel-button.prev {
+    left: 1rem;
+    background-color: white;
+    width: 33px;
+    height: 33px;
+    border-radius: 0px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .carousel-button.next {
+    right: 1rem;
+    background-color: white;
+    width: 33px;
+    height: 33px;
+    border-radius: 0px;
+    outline: none;
+     display: flex;
+    align-items: center;
+
+  }
+  
+  .text-box{
+    width: 242px;
+    font-family: 'Raleway', sans-serif;
+  }
+  .text-box-slogan-part1{
+    font-size: 16px;
+    color: var(--grey-color);
+    padding-bottom: 14px;
+  }
+  .text-box-slogan-part2{
+    font-size: 25px;
+    color: var(--black-color);
+  }
+  .text-box-paragraph{
+    padding-top: 25px;
+    font-size: 16px;
+    color: var(--grey-color);
+  }
+  .text-box{
+    padding-left: 91px;
+    padding-top: 79px;
+  }
+  .carousel-button-prev{
+    width: 33px;
+    height: 33px;
+  }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+  
+.modal-content h2{
+  padding-bottom: 10px;
+  font-size: 18px;
+  color: #0049B7;
+  font-weight: bold;
+  padding-left: 30px;
+}
+.modal-content p{
+  font-size: 18px;
+  padding-left: 20px;
+  width: 200px;
+  align-self: center;
+  color:  #51e2f5;
+  
+
+}
+
+.modal-content {
+  background: #1A2980;  
+  background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);  
+  background: linear-gradient(to right, #26D0CE, #1A2980); 
+  margin: 10% auto;
+  padding: 20px;
+  border: 4px solid white;
+  max-width: 600px;
+  border-radius: 50px;   
+
+}
+.modal-content img{
+  width: 300px;
+  height: 200px;
+  border-radius: 50px;
+}
+.modal-items{
+  display: flex;
+}
+  
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.card h2{
+    font-size: 18px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.outlaws{
+    display: flex;
+}
+.card{
+    width: 270px;
+    height: 327px;
+    cursor: pointer;
+    
+}
+.card img{
+    width: 100%;
+    height: 181px;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 20px;
+    padding-top: 80px; 
+    font-family: 'Raleway', sans-serif;
+    color: var(--grey-color);
+    
+}
+
+.hot-services{
+  display: flex;
+  gap: 41px;
+}
+.Stat-Numbers{
+  font-size: 32px;
+  padding-bottom: 4px;
+  
+}
+.Stat-Names{
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+.Stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes counting {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Stat-Group{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 108px;
+}
+.Sticker{
+  padding-bottom: 23px;
+}
+
+hr{
+  margin-top: 64px;
+}
+  
+#card-container img{
+  padding-bottom: 22px;
+}
+#card-container h2{
+  padding-bottom: 8px;
+}
+.Video-background{
+  opacity: 0.80;
+
+
+background: #000000;
+  width: 100%;
+  height: 500px;
+
+}
+.Video-Title-1{
+  font-size: 16px;
+  color: var(--white-color1);
+  align-self: center;
+  padding-bottom: 5px;
+}
+.Video-Title-2{
+  font-size: 26px;
+  color: var(--white-color1);
+}
+.Video-Elements-Wrapper {
+  padding-top: 67px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.Video-Elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
+.Video{
+  
+  padding-top: 52px;
+}
+.Video-background-Wrapper{
+  background-image: url(../images/section-background-images/Beach.png);
+
+}
+.Offers-Title-part1{
+  font-size: 16px;
+  color: var(--grey-color);
+  padding-bottom: 5px;
+  
+}
+.Offers-Title-part2{
+  font-size: 26px;
+  color: var(--black-color);
+}
+.Offers-Title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 66px;
+  font-family: 'Raleway', sans-serif;
+}
+.Tour-Package-Card{
+  width: 267px;
+  height: 358px;
+  background: var(--white-color2);
+  filter: drop-shadow(0px 0px 6px rgba(101,101,101,0.2 ));
+  cursor: pointer;
+}
+#Removed-Card:hover {
+  outline: 5px solid var(--light-blue);
+}
+#Removed-Card2:hover {
+  outline: 5px solid var(--light-blue);
+}
+#Last-Card:hover{
+  outline: 5px solid var(--light-blue);
+
+}
+
+
+
+.Tour-Package-Card-Info{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 15px;
+}
+.Tour-Package-Price{
+  font-size: 14px;
+  color: var(--grey-color);
+  padding-bottom: 12px;
+}
+.Tour-Package-Name{
+  font-size: 18px;
+  color: var(--blue-color);
+  padding-bottom: 7px;
+}
+.Tour-Package-Lenght{
+  font-size: 14px;
+  color: var(--grey-color);
+}
+.Tour-Package-Cards{
+  display: flex;
+  justify-content: center;
+  gap: 31px;
+  padding-top: 67px;
+  font-family: 'Raleway', sans-serif;
+}
+.Package-Tour-Card-Lable{
+  background-color: var(--yellow-color);
+  width: 98px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.Package-Tour-Card-Lable-text{
+  font-size: 14px;
+  color: var(--black-color);
+}
+.Subscription{
+  background: #08aeea;
+  background: linear-gradient(-1deg, 
+  #08aeea 0.00%, 
+  #2af598 100.00%);
+  height: 350px;
+  margin-top: 71px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; 
+  opacity: 0.82;
+  font-family: 'Raleway', sans-serif;
+
+   
+}
+.Subscription-Wrapper{
+  background-image: url(../images/section-background-images/surfing-background.png);
+
+
+}
+
+.Subscription-Discount-Title{
+  font-size: 34px;
+  color: var(--white-color1);
+  padding-bottom: 20px;
+}
+.Subscription-Discount-Limit-note{
+  color: var(--white-color1);
+  font-size: 18px;
+  padding-bottom: 60px;
+}
+.input-email{
+  height: 50px;
+  width: 395px;
+  border-color: var(--white-color1);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.03 );
+  outline: none;
+  color: var(--white-color1);
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+.input-email::placeholder{
+  padding-left: 30px;
+  color: var(--white-color1);
+  font-size: 16px;
+}
+
+.Subscribe-Button{
+  width: 155px;
+  height: 50px;
+  background-color: var(--white-color1);
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  color: var(--light-blue);
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+}
+.Subscribe-Button:hover{
+  box-shadow: 0 0 30px var(--blue-color);
+
+}
+
+form{
+  display: flex;
+  gap: 22px;
+  align-self: center;
+}
+.Happpy-Travelers-Comments-Title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+.Happy-Travelers-Comments-Title-part1{
+  font-size: 16px;
+  color: var(--grey-color);
+  padding-bottom: 5px;
+  padding-top: 67px;
+}
+.Happy-Travelers-Comments-Title-part2{
+  font-size: 26px;
+  color: var(--black-color);
+ 
+
+}
+.Comment-Card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 409px;
+  width: 368px;
+  background-color: var(--white-color3);
+  font-family: 'Raleway', sans-serif;
+}
+.Commnet-Content{
+  color: var(--black-color);
+  font-size: 16px;
+}
+.comment-profile-image{
+  padding-top: 54px;
+  padding-bottom: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.comment-profile-image:hover{
+  scale: 1.1;
+  
+}
+.comment-username{
+  font-size: 18px;
+  color: var(--blue-color);
+  padding-bottom: 37px;
+  cursor: pointer;
+}
+
+.Paragraph-Comment{
+  width: 297px;
+}
+.Paragraph-Comment-Wrapper{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35px;
+}
+.Comment-Cards{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 82px;
+}
+.Booking{
+  height: 505px;
+  background-image: url(../images/section-background-images/Mountains.png);
+}
+.Booking-Ad{
+  font-size: 36px;
+  color: var(--white-color2);
+  padding-top: 312px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+.Booking-Button{
+  color: var(--white-color1);
+  font-size: 16px;
+  width: 170px;
+  height: 50px;
+  border-radius: 25px;
+  background: #08aeea;
+  background: linear-gradient(-1deg, 
+  #08aeea 0.00%, 
+  #2af598 100.00%);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+}
+.Booking-Button:hover{
+  box-shadow: 0 0 30px #08AEEA;
+}
+.Booking-Button-Wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 49px;
+}
+.Popular-Tourism-Countries-Title{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 67px;
+  font-family: 'Raleway', sans-serif;
+}
+.Popular-Tourism-Countries-Title-Part1{
+  font-size: 16px;
+  color: var(--grey-color);
+  padding-bottom: 5px;
+}
+.Popular-Tourism-Countries-Title-Part2{
+  font-size: 26px;
+  color: var(--black-color);
+}
+.Popular-Tourism-Country-Card1{
+  background-image: url(../images/card-images/Popular-Tourism-Countries-card-images/Thailand.png);
+  width: 271px;
+  height: 425px;
+  filter: drop-shadow(0px 0px 10px rgba(101,101,101,0.2 ));
+
+
+}
+.Popular-Tourism-Country-Card2{
+  background-image: url(../images/card-images/Popular-Tourism-Countries-card-images/Italy.png);
+  width: 271px;
+  height: 425px;
+  filter: drop-shadow(0px 0px 10px rgba(101,101,101,0.2 ));
+  
+
+}
+.Popular-Tourism-Country-Card3{
+  background-image: url(../images/card-images/Popular-Tourism-Countries-card-images/Indonesia.png);
+  width: 271px;
+  height: 425px;
+  filter: drop-shadow(0px 0px 10px rgba(101,101,101,0.2 ));
+  
+
+}
+.Popular-Tourism-Country-Card4{
+  background-image: url(../images/card-images/Popular-Tourism-Countries-card-images/Thailand.png);
+  width: 271px;
+  height: 425px;
+  filter: drop-shadow(0px 0px 10px rgba(101,101,101,0.2 ));
+
+
+}
+
+.Popular-Tourism-Country-Cards{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 70px;
+}
+.Name-Of-The-Country{
+  font-size: 30px;
+  color: var(--white-color2);
+  font-family: 'Raleway', sans-serif;
+
+}
+.Price-Of-The-Trip{
+  font-size: 14px;
+  color: var(--white-color2);
+}
+.Circle-Button{
+  position: absolute;
+  bottom: 16px;
+  right: 17px;
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0px 0px 10px rgba(101,101,101,0.2 ));
+  background: #08aeea;
+  background: linear-gradient(-5deg, 
+  #08aeea 0.00%, 
+  #2af598 100.00%);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.Circle-Button:hover {
+  transform: scale(1.3);
+}
+.Popular-Tourism-Country-Card-info-Container{
+  padding-left: 18px;
+  padding-top: 358px;
+ 
+}
+
+.Map-Wrapper{
+  padding-top: 79px;
+}
+footer{
+  background-color: var(--footer-black);
+  height: 349px;
+}
+.Footer-Links{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 54px;
+  font-family: 'Raleway', sans-serif;
+
+}
+.Footer-Links a{
+  color: var(--footer-text-color);
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.Footer-Links a:hover{
+  color: var(--light-blue);
+}
+.Footer-Links h4{
+  color:  var(--white-color1);
+  font-size: 20px;
+  text-decoration: none;
+}
+.Footer-Content{
+  display: flex;
+  gap: 70px;
+  padding-left: 94px;
+}
+.Footer-input{
+  width: 285px;
+  height: 47px;
+  outline: none;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: var(--footer-input-color);
+  font-size: 16px;
+}
+.Footer-input-Button{
+  width: 58px;
+  height: 49px;
+  background: #08aeea;
+  background: linear-gradient(-2deg, 
+  #08aeea 0.00%, 
+  #2af598 100.00%);
+  outline: none;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
+}
+.Subcscription-Input{
+  display: flex;
+  gap: 0px;
+}
+.Footer-Subscription-Input{
+  margin-top: 55px;
+  padding-left: 198px;
+}
+.Footer-input::placeholder{
+ color: var(--footer-input-color);
+ font-size: 16px;
+ padding-left: 16px;
+}
+.Footer-Input-Offer{
+  font-size: 16px;
+  color: var(--white-color1);
+}
+.Footer-Subscription-Input{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+  
+.Footer-Line{
+  margin-top: 67px;
+}
+.Footer-Note{
+  text-align: center;
+  font-size: 20px;
+  color: var(--footer-text-color);
+  padding-top: 22px;
+  font-family: 'Raleway', sans-serif;
+
+}
+.API-title{
+  font-size: 50px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 40px;
+}
+.title-and-dogs{
+  display: flex;
+  flex-direction: column;
+}
+.title-and-dogs-wrapper{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+#imgDog{
+  width: 500px;
+  height: 500px;
+}
+
+@media (max-width: 1200px){
+  .Footer-Subscription-Input{
+    padding-left: 150px;
+  }
+}
+@media (max-width: 1150px){
+  .Footer-Subscription-Input{
+    padding-left: 0px;
+  }
+  footer{
+    height: 370px;
+  }
+  .Popular-Tourism-Country-Card4{
+    display: none;
+  }
+  #Removed-Comment{
+    display: none;
+  }
+  #Removed-List{
+    display: none;
+  }
+  
+}
+@media (max-width: 900px){
+  #Removed-Card{
+    display: none;
+  }
+  .Popular-Tourism-Country-Card3{
+    display: none;
+  }
+  #Removed-List2{
+    display: none;
+  }
+  .Video iframe{
+    width: 500px;
+
+  }
+}
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: #74ebd5;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding-top: 10px;
+      text-align: center;
+      z-index: 2;
+      gap: 20px;
+      
+    }
+    .nav-links a{
+      color: #34568B;
+    }
+  
+    .nav-links li {
+      margin-bottom: 10px;
+    }
+  
+    .burger {
+      display: block;
+    }
+  
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  
+    .toggle .line2 {
+      opacity: 0;
+    }
+  
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  
+    .nav-active {
+      display: flex;
+    }
+  }
+  @media (max-width: 680px){
+    #Removed-List3{
+      display: none;
+    }
+    #Removed-Comment2{
+      display: none;
+    }
+    .Popular-Tourism-Country-Card2{
+      display: none;
+    }
+  }
+  @media (max-width: 600px){
+    .text-box{
+      display: none;
+    }
+    .modal-items{
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-items img{
+      width: 200px;
+    }
+    .modal-items p{
+      position: relative;
+      right: 60px;
+      top: 10px;
+
+    }
+    .modal-content{
+      width: 200px;
+    }
+    .Video iframe{
+      width: 300px;
+    }
+    #Removed-Card2{
+      display: none;
+    }
+    .input-email{
+      width: 300px;
+    }
+    .Stat-Group{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    #card-container{
+      display: flex;
+      justify-content: center;
+    }
+    .Subscription-Form{
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .Subscription-Discount-Title{
+      display: none;
+    }
+    .Footer-input{
+      width: 200px;
+    }
+    .Footer-Subscription-Input{
+      position: relative;
+      right: 60px;
+    }
+    #Card-Resized{
+      width: 300px;
+    }
+    .Booking-Ad{
+      font-size: 20px;
+    }
+    .modal-image{
+      width: 100px;
+    }
+    .Footer-input{
+      width: 150px;
+    }
+    .input-email{
+      width: 200px;
+    }
+    .input-email{
+      font-size: 16px;
+    }
+    
+    .API-title{
+      font-size: 30px;
+    }
+    #imgDog{
+      width: 300px;
+      height: 300px;
+    }
+   
+
+  }
+  
